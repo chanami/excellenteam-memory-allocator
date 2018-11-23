@@ -3,7 +3,7 @@
 
 struct MemoryAllocator{
     size_t m_size;
-    void *memory_pointer;
+    void *m_memory_pointer;
 };
 
 MemoryAllocator* MemoryAllocator_init(void* memoryPool, size_t size){
@@ -11,12 +11,22 @@ MemoryAllocator* MemoryAllocator_init(void* memoryPool, size_t size){
 
     if(size%sizeof(size_t)==0)
         size -= size % size%sizeof(size_t);
+
     ma->m_size=size;
-    ma->memory_pointer=memoryPool;
+    ma->m_memory_pointer=memoryPool;
+    *((size_t*)ma->m_memory_pointer)=0
+
     return ma;
 }
 
 void* MemoryAllocator_allocate(MemoryAllocator* allocator, size_t size){
+    int i;
+    size_t m_size=allocator->m_size;
+
+    for(i=0; i <allocator->m_size; i++){
+
+
+    }
     return NULL;
 }
 
