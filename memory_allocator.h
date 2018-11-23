@@ -1,4 +1,5 @@
-
+#include <stdio.h>
+#include <stdlib.h>
 #ifndef EXCELLENTEAM_ELLA_CPP_MEMORY_ALLOCATOR_CHANAMI_MEMORY_ALLOCATER_H
 #define EXCELLENTEAM_ELLA_CPP_MEMORY_ALLOCATOR_CHANAMI_MEMORY_ALLOCATER_H
 
@@ -18,4 +19,4 @@ size_t MemoryAllocator_optimize(MemoryAllocator* allocator);
 
 
 
-#endif //EXCELLENTEAM_ELLA_CPP_MEMORY_ALLOCATOR_CHANAMI_MEMORY_ALLOCATER_H
+#endif
