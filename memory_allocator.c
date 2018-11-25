@@ -63,6 +63,27 @@ void* MemoryAllocator_allocate(MemoryAllocator* allocator, size_t size)
     return NULL;
 }
 
+/* Return number of still allocated blocks */
+size_t MemoryAllocator_free(MemoryAllocator* allocator, void* ptr){
+
+    void* current_block = allocator->m_memory_ptr;
+    size_t allocated_blocks = 0;
+    size_t *end_of_allocator = (size_t*)current_block + allocator->m_size;
+
+    *(size_t*)ptr -= OCCUPIED;
+
+    while(current_block != end_of_allocator)
+    {
+        if(*((size_t*)current_block) & OCCUPIED)
+            allocated_blocks += 1;
+
+        current_block = *((size_t*)current_block) + MANAGER + (size_t*)current_block;
+
+    }
+
+    return allocated_blocks;
+
+}
 
 int main(){
     return 0;
