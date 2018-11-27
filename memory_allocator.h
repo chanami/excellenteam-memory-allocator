@@ -16,7 +16,4 @@ size_t MemoryAllocator_free(MemoryAllocator* allocator, void* ptr);
 size_t MemoryAllocator_optimize(MemoryAllocator* allocator);
 
 
-
-
-
 #endif
